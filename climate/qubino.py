@@ -75,7 +75,8 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Demo climate devices."""
 
     dimmer_entity_id = config.get(CONF_ENTITY)
-    qubinoentity = QubinoPilotWire(CONF_NAME, dimmer_entity_id)
+    entity_name = config.get(CONF_NAME)
+    qubinoentity = QubinoPilotWire(entity_name, dimmer_entity_id)
 
 #    s = hass.states.get(dimmer_entity_id)
 #    print(s)
