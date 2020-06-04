@@ -42,14 +42,12 @@ class PWState():
             state = PWModes.Confort1
         else:
             state = PWModes.Confort
-        pwstate = cls(state)
-        return pwstate
+        return cls(state)
 
     @property
     def dimvalue(self):
         stateint = self._state.value
-        dimperc = (stateint * 10) - 5
-        return dimperc
+        return (stateint * 10) - 5
 
     def __str__(self):
         return self.opmodes[self._state]
